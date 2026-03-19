@@ -328,7 +328,7 @@ export default function App() {
     >
       <Navbar />
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
-        {/* <Hero /> */}
+        <Hero />
 
         {/* Flash Deals */}
         <div
