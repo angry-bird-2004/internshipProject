@@ -585,6 +585,102 @@ export default function App() {
           </div>
         </section>
 
+        <section style={{ marginBottom: "40px" }}>
+          <h3 style={{ fontSize: "24px", marginBottom: "20px" }}>
+            Our extra services
+          </h3>
+
+          {/* The Container: 4 columns for desktop */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: "20px",
+            }}
+          >
+            {[
+              { img: img1, text: "Source from Industry Hubs", icon: "🔍" },
+              { img: img2, text: "Customize Your Products", icon: "📦" },
+              {
+                img: img3,
+                text: "Fast, reliable shipping by ocean or air",
+                icon: "✈️",
+              },
+              {
+                img: img4,
+                text: "Product monitoring and inspection",
+                icon: "🛡️",
+              },
+            ].map((service, index) => (
+              <div
+                key={index}
+                style={{
+                  background: "#fff",
+                  border: "1px solid #dee2e7",
+                  borderRadius: "6px",
+                  overflow: "hidden", // Keeps the top image rounded at the corners
+                  position: "relative",
+                }}
+              >
+                {/* 1. The Large Cover Image */}
+                <div
+                  style={{
+                    height: "120px",
+                    overflow: "hidden",
+                    background: "#f7f7f7",
+                  }}
+                >
+                  <img
+                    src={service.img}
+                    alt=""
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      opacity: 0.8,
+                    }}
+                  />
+                </div>
+
+                {/* 2. The Overlapping Icon (Optional, seen in many Alibaba-style designs) */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "100px", // Pushes it halfway between image and text
+                    right: "20px",
+                    background: "#D1E7FF",
+                    border: "2px solid #fff",
+                    borderRadius: "50%",
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "20px",
+                  }}
+                >
+                  {service.icon}
+                </div>
+
+                {/* 3. The Text Content */}
+                <div style={{ padding: "15px 20px 20px 20px" }}>
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      fontWeight: "500",
+                      margin: 0,
+                      lineHeight: "1.4",
+                      maxWidth: "80%", // Prevents text from hitting the icon
+                    }}
+                  >
+                    {service.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Region Section */}
         <section style={{ paddingBottom: "50px" }}>
           <h3>Suppliers by region</h3>
