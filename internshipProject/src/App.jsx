@@ -92,7 +92,6 @@ const Navbar = () => (
     </div>
   </nav>
 );
-
 const Hero = () => (
   <section
     style={{
@@ -220,7 +219,6 @@ const Hero = () => (
     </div>
   </section>
 );
-
 const CategorySection = ({ title, bg, items }) => (
   <div
     style={{
@@ -292,7 +290,425 @@ const CategorySection = ({ title, bg, items }) => (
     </div>
   </div>
 );
+const FlashDeals = () => {
+  return (
+    <div
+      style={{
+        background: "#fff",
+        border: "1px solid #dee2e7",
+        borderRadius: "6px",
+        display: "flex",
+        marginBottom: "20px",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          width: "250px",
+          padding: "20px",
+          borderRight: "1px solid #dee2e7",
+        }}
+      >
+        <h4 style={{ margin: "0 0 5px 0" }}>Deals and offers</h4>
+        <p style={{ color: "#8b96a5", margin: 0 }}>Hygiene equipments</p>
+        <div style={{ display: "flex", gap: "5px", marginTop: "15px" }}>
+          {["04", "13", "34", "56"].map((time, idx) => (
+            <div
+              key={idx}
+              style={{
+                background: "#606060",
+                color: "#fff",
+                padding: "5px",
+                borderRadius: "4px",
+                textAlign: "center",
+                width: "45px",
+              }}
+            >
+              <div style={{ fontWeight: "bold" }}>{time}</div>
+              <div style={{ fontSize: "10px" }}>
+                {["Days", "Hour", "Min", "Sec"][idx]}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexGrow: 1,
+          justifyContent: "space-around",
+        }}
+      >
+        {[
+          { name: "Smart watch", discount: "-25%", img: Watch },
+          { name: "Laptops", discount: "-15%", img: Laptop },
+          { name: "GoPro cameras", discount: "-40%", img: Camera },
+          { name: "Headphones", discount: "-25%", img: headPhone },
+          { name: "Canon phones", discount: "-25%", img: phone1 },
+        ].map((item, index) => (
+          <div
+            key={index}
+            style={{
+              flex: 1,
+              padding: "20px",
+              textAlign: "center",
+              borderRight: index !== 4 ? "1px solid #dee2e7" : "none",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src={item.img}
+              alt=""
+              style={{
+                height: "80px",
+                objectFit: "contain",
+                marginBottom: "10px",
+              }}
+            />
+            <p style={{ fontSize: "14px", margin: "0 0 10px 0" }}>
+              {item.name}
+            </p>
+            <span
+              style={{
+                background: "#FFE3E3",
+                color: "#EB001B",
+                padding: "4px 12px",
+                borderRadius: "20px",
+                fontSize: "12px",
+                fontWeight: "bold",
+              }}
+            >
+              {item.discount}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+const InquirySection = () => {
+  return (
+    <section
+      style={{
+        background: `linear-gradient(rgba(0, 103, 255, 0.7), rgba(0, 103, 255, 0.7)), url(${inqureybg}) no-repeat center center`,
+        backgroundSize: "cover",
+        borderRadius: "6px",
+        padding: "40px 60px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        minHeight: "400px",
+        marginBottom: "30px",
+        color: "#fff",
+      }}
+    >
+      <div style={{ maxWidth: "440px" }}>
+        <h2
+          style={{
+            fontSize: "32px",
+            marginBottom: "15px",
+            fontWeight: "bold",
+          }}
+        >
+          An easy way to send requests to all suppliers
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt.
+        </p>
+      </div>
+      <div
+        style={{
+          background: "#fff",
+          padding: "30px",
+          borderRadius: "6px",
+          width: "440px",
+          color: "#1C1C1C",
+        }}
+      >
+        <h3 style={{ marginTop: 0, marginBottom: "20px" }}>
+          Send quote to suppliers
+        </h3>
+        <input
+          type="text"
+          placeholder="What item you need?"
+          style={{
+            width: "100%",
+            padding: "10px",
+            marginBottom: "15px",
+            border: "1px solid #dee2e7",
+            borderRadius: "6px",
+            boxSizing: "border-box",
+          }}
+        />
+        <textarea
+          placeholder="Type more details"
+          style={{
+            width: "100%",
+            padding: "10px",
+            height: "80px",
+            marginBottom: "15px",
+            border: "1px solid #dee2e7",
+            borderRadius: "6px",
+            boxSizing: "border-box",
+            resize: "none",
+          }}
+        />
+        <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+          <input
+            type="number"
+            placeholder="Quantity"
+            style={{
+              flex: 1,
+              padding: "10px",
+              border: "1px solid #dee2e7",
+              borderRadius: "6px",
+            }}
+          />
+          <select
+            style={{
+              padding: "10px",
+              border: "1px solid #dee2e7",
+              borderRadius: "6px",
+            }}
+          >
+            <option>Pcs</option>
+          </select>
+        </div>
+        <button
+          style={{
+            background: "#0D6EFD",
+            color: "#fff",
+            border: "none",
+            padding: "12px 25px",
+            borderRadius: "6px",
+            fontWeight: "bold",
+            cursor: "pointer",
+          }}
+        >
+          Send inquiry
+        </button>
+      </div>
+    </section>
+  );
+};
+const RecommendedItems = () => {
+  return (
+    <section style={{ marginBottom: "40px" }}>
+      <h3>Recommended items</h3>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(5, 1fr)",
+          gap: "20px",
+        }}
+      >
+        {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10].map(
+          (img, i) => (
+            <div
+              key={i}
+              style={{
+                background: "#fff",
+                border: "1px solid #dee2e7",
+                borderRadius: "6px",
+                padding: "15px",
+              }}
+            >
+              <img
+                src={img}
+                alt=""
+                style={{
+                  height: "150px",
+                  width: "100%",
+                  objectFit: "contain",
+                  marginBottom: "15px",
+                }}
+              />
+              <p style={{ fontWeight: "bold", margin: "0 0 5px 0" }}>$10.30</p>
+              <p style={{ color: "#8b96a5", fontSize: "14px", margin: 0 }}>
+                T-shirts for men
+              </p>
+            </div>
+          ),
+        )}
+      </div>
+    </section>
+  );
+};
+const ExtraSection = () => {
+  return (
+    <section style={{ marginBottom: "40px" }}>
+      <h3 style={{ fontSize: "24px", marginBottom: "20px" }}>
+        Our extra services
+      </h3>
 
+      {/* The Container: 4 columns for desktop */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "20px",
+        }}
+      >
+        {[
+          { img: img1, text: "Source from Industry Hubs", icon: "🔍" },
+          { img: img2, text: "Customize Your Products", icon: "📦" },
+          {
+            img: img3,
+            text: "Fast, reliable shipping by ocean or air",
+            icon: "✈️",
+          },
+          {
+            img: img4,
+            text: "Product monitoring and inspection",
+            icon: "🛡️",
+          },
+        ].map((service, index) => (
+          <div
+            key={index}
+            style={{
+              background: "#fff",
+              border: "1px solid #dee2e7",
+              borderRadius: "6px",
+              overflow: "hidden", // Keeps the top image rounded at the corners
+              position: "relative",
+            }}
+          >
+            {/* 1. The Large Cover Image */}
+            <div
+              style={{
+                height: "120px",
+                overflow: "hidden",
+                background: "#f7f7f7",
+              }}
+            >
+              <img
+                src={service.img}
+                alt=""
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  opacity: 0.8,
+                }}
+              />
+            </div>
+
+            {/* 2. The Overlapping Icon (Optional, seen in many Alibaba-style designs) */}
+            <div
+              style={{
+                position: "absolute",
+                top: "100px", // Pushes it halfway between image and text
+                right: "20px",
+                background: "#D1E7FF",
+                border: "2px solid #fff",
+                borderRadius: "50%",
+                width: "40px",
+                height: "40px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "20px",
+              }}
+            >
+              {service.icon}
+            </div>
+
+            {/* 3. The Text Content */}
+            <div style={{ padding: "15px 20px 20px 20px" }}>
+              <p
+                style={{
+                  fontSize: "16px",
+                  fontWeight: "500",
+                  margin: 0,
+                  lineHeight: "1.4",
+                  maxWidth: "80%", // Prevents text from hitting the icon
+                }}
+              >
+                {service.text}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+const RegionSection = () => {
+  return (
+    <section style={{ paddingBottom: "50px" }}>
+      <h3>Suppliers by region</h3>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(5, 1fr)",
+          gap: "15px",
+        }}
+      >
+        {[
+          "Arabic Emirates",
+          "Australia",
+          "United States",
+          "Russia",
+          "Italy",
+          "Denmark",
+          "France",
+          "China",
+          "Great Britain",
+        ].map((region) => (
+          <div key={region} style={{ fontSize: "14px" }}>
+            <strong>{region}</strong> <br />{" "}
+            <span style={{ color: "#8b96a5" }}>shopname.ae</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+const Footer = () => {
+  return (
+    <footer
+      style={{
+        background: "#fff",
+        padding: "40px 0",
+        borderTop: "1px solid #dee2e7",
+        textAlign: "center",
+      }}
+    >
+      <h3>Subscribe on our newsletter</h3>
+      <p style={{ color: "#8b96a5" }}>
+        Get daily news on upcoming offers from many suppliers
+      </p>
+      <div style={{ marginTop: "20px" }}>
+        <input
+          type="email"
+          placeholder="Email"
+          style={{
+            padding: "10px",
+            border: "1px solid #dee2e7",
+            borderRadius: "6px 0 0 6px",
+            width: "250px",
+          }}
+        />
+        <button
+          style={{
+            padding: "10px 20px",
+            background: "#0D6EFD",
+            color: "#fff",
+            border: "none",
+            borderRadius: "0 6px 6px 0",
+            cursor: "pointer",
+          }}
+        >
+          Subscribe
+        </button>
+      </div>
+    </footer>
+  );
+};
 // --- Main App Component ---
 
 export default function App() {
@@ -331,102 +747,7 @@ export default function App() {
         <Hero />
 
         {/* Flash Deals */}
-        <div
-          style={{
-            background: "#fff",
-            border: "1px solid #dee2e7",
-            borderRadius: "6px",
-            display: "flex",
-            marginBottom: "20px",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              width: "250px",
-              padding: "20px",
-              borderRight: "1px solid #dee2e7",
-            }}
-          >
-            <h4 style={{ margin: "0 0 5px 0" }}>Deals and offers</h4>
-            <p style={{ color: "#8b96a5", margin: 0 }}>Hygiene equipments</p>
-            <div style={{ display: "flex", gap: "5px", marginTop: "15px" }}>
-              {["04", "13", "34", "56"].map((time, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    background: "#606060",
-                    color: "#fff",
-                    padding: "5px",
-                    borderRadius: "4px",
-                    textAlign: "center",
-                    width: "45px",
-                  }}
-                >
-                  <div style={{ fontWeight: "bold" }}>{time}</div>
-                  <div style={{ fontSize: "10px" }}>
-                    {["Days", "Hour", "Min", "Sec"][idx]}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexGrow: 1,
-              justifyContent: "space-around",
-            }}
-          >
-            {[
-              { name: "Smart watch", discount: "-25%", img: Watch },
-              { name: "Laptops", discount: "-15%", img: Laptop },
-              { name: "GoPro cameras", discount: "-40%", img: Camera },
-              { name: "Headphones", discount: "-25%", img: headPhone },
-              { name: "Canon phones", discount: "-25%", img: phone1 },
-            ].map((item, index) => (
-              <div
-                key={index}
-                style={{
-                  flex: 1,
-                  padding: "20px",
-                  textAlign: "center",
-                  borderRight: index !== 4 ? "1px solid #dee2e7" : "none",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  src={item.img}
-                  alt=""
-                  style={{
-                    height: "80px",
-                    objectFit: "contain",
-                    marginBottom: "10px",
-                  }}
-                />
-                <p style={{ fontSize: "14px", margin: "0 0 10px 0" }}>
-                  {item.name}
-                </p>
-                <span
-                  style={{
-                    background: "#FFE3E3",
-                    color: "#EB001B",
-                    padding: "4px 12px",
-                    borderRadius: "20px",
-                    fontSize: "12px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {item.discount}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
+        <FlashDeals />
         <CategorySection
           title="Home and outdoor"
           bg={homebg}
@@ -439,315 +760,18 @@ export default function App() {
         />
 
         {/* Inquiry Section (Using your logic) */}
-        <section
-          style={{
-            background: `linear-gradient(rgba(0, 103, 255, 0.7), rgba(0, 103, 255, 0.7)), url(${inqureybg}) no-repeat center center`,
-            backgroundSize: "cover",
-            borderRadius: "6px",
-            padding: "40px 60px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            minHeight: "400px",
-            marginBottom: "30px",
-            color: "#fff",
-          }}
-        >
-          <div style={{ maxWidth: "440px" }}>
-            <h2
-              style={{
-                fontSize: "32px",
-                marginBottom: "15px",
-                fontWeight: "bold",
-              }}
-            >
-              An easy way to send requests to all suppliers
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt.
-            </p>
-          </div>
-          <div
-            style={{
-              background: "#fff",
-              padding: "30px",
-              borderRadius: "6px",
-              width: "440px",
-              color: "#1C1C1C",
-            }}
-          >
-            <h3 style={{ marginTop: 0, marginBottom: "20px" }}>
-              Send quote to suppliers
-            </h3>
-            <input
-              type="text"
-              placeholder="What item you need?"
-              style={{
-                width: "100%",
-                padding: "10px",
-                marginBottom: "15px",
-                border: "1px solid #dee2e7",
-                borderRadius: "6px",
-                boxSizing: "border-box",
-              }}
-            />
-            <textarea
-              placeholder="Type more details"
-              style={{
-                width: "100%",
-                padding: "10px",
-                height: "80px",
-                marginBottom: "15px",
-                border: "1px solid #dee2e7",
-                borderRadius: "6px",
-                boxSizing: "border-box",
-                resize: "none",
-              }}
-            />
-            <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
-              <input
-                type="number"
-                placeholder="Quantity"
-                style={{
-                  flex: 1,
-                  padding: "10px",
-                  border: "1px solid #dee2e7",
-                  borderRadius: "6px",
-                }}
-              />
-              <select
-                style={{
-                  padding: "10px",
-                  border: "1px solid #dee2e7",
-                  borderRadius: "6px",
-                }}
-              >
-                <option>Pcs</option>
-              </select>
-            </div>
-            <button
-              style={{
-                background: "#0D6EFD",
-                color: "#fff",
-                border: "none",
-                padding: "12px 25px",
-                borderRadius: "6px",
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            >
-              Send inquiry
-            </button>
-          </div>
-        </section>
+        <InquirySection />
 
         {/* Recommended Items */}
-        <section style={{ marginBottom: "40px" }}>
-          <h3>Recommended items</h3>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(5, 1fr)",
-              gap: "20px",
-            }}
-          >
-            {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10].map(
-              (img, i) => (
-                <div
-                  key={i}
-                  style={{
-                    background: "#fff",
-                    border: "1px solid #dee2e7",
-                    borderRadius: "6px",
-                    padding: "15px",
-                  }}
-                >
-                  <img
-                    src={img}
-                    alt=""
-                    style={{
-                      height: "150px",
-                      width: "100%",
-                      objectFit: "contain",
-                      marginBottom: "15px",
-                    }}
-                  />
-                  <p style={{ fontWeight: "bold", margin: "0 0 5px 0" }}>
-                    $10.30
-                  </p>
-                  <p style={{ color: "#8b96a5", fontSize: "14px", margin: 0 }}>
-                    T-shirts for men
-                  </p>
-                </div>
-              ),
-            )}
-          </div>
-        </section>
-
-        <section style={{ marginBottom: "40px" }}>
-          <h3 style={{ fontSize: "24px", marginBottom: "20px" }}>
-            Our extra services
-          </h3>
-
-          {/* The Container: 4 columns for desktop */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "20px",
-            }}
-          >
-            {[
-              { img: img1, text: "Source from Industry Hubs", icon: "🔍" },
-              { img: img2, text: "Customize Your Products", icon: "📦" },
-              {
-                img: img3,
-                text: "Fast, reliable shipping by ocean or air",
-                icon: "✈️",
-              },
-              {
-                img: img4,
-                text: "Product monitoring and inspection",
-                icon: "🛡️",
-              },
-            ].map((service, index) => (
-              <div
-                key={index}
-                style={{
-                  background: "#fff",
-                  border: "1px solid #dee2e7",
-                  borderRadius: "6px",
-                  overflow: "hidden", // Keeps the top image rounded at the corners
-                  position: "relative",
-                }}
-              >
-                {/* 1. The Large Cover Image */}
-                <div
-                  style={{
-                    height: "120px",
-                    overflow: "hidden",
-                    background: "#f7f7f7",
-                  }}
-                >
-                  <img
-                    src={service.img}
-                    alt=""
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      opacity: 0.8,
-                    }}
-                  />
-                </div>
-
-                {/* 2. The Overlapping Icon (Optional, seen in many Alibaba-style designs) */}
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "100px", // Pushes it halfway between image and text
-                    right: "20px",
-                    background: "#D1E7FF",
-                    border: "2px solid #fff",
-                    borderRadius: "50%",
-                    width: "40px",
-                    height: "40px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "20px",
-                  }}
-                >
-                  {service.icon}
-                </div>
-
-                {/* 3. The Text Content */}
-                <div style={{ padding: "15px 20px 20px 20px" }}>
-                  <p
-                    style={{
-                      fontSize: "16px",
-                      fontWeight: "500",
-                      margin: 0,
-                      lineHeight: "1.4",
-                      maxWidth: "80%", // Prevents text from hitting the icon
-                    }}
-                  >
-                    {service.text}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <RecommendedItems />
+        
+        <ExtraSection />
 
         {/* Region Section */}
-        <section style={{ paddingBottom: "50px" }}>
-          <h3>Suppliers by region</h3>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(5, 1fr)",
-              gap: "15px",
-            }}
-          >
-            {[
-              "Arabic Emirates",
-              "Australia",
-              "United States",
-              "Russia",
-              "Italy",
-              "Denmark",
-              "France",
-              "China",
-              "Great Britain",
-            ].map((region) => (
-              <div key={region} style={{ fontSize: "14px" }}>
-                <strong>{region}</strong> <br />{" "}
-                <span style={{ color: "#8b96a5" }}>shopname.ae</span>
-              </div>
-            ))}
-          </div>
-        </section>
+        <RegionSection />
       </div>
-
-      <footer
-        style={{
-          background: "#fff",
-          padding: "40px 0",
-          borderTop: "1px solid #dee2e7",
-          textAlign: "center",
-        }}
-      >
-        <h3>Subscribe on our newsletter</h3>
-        <p style={{ color: "#8b96a5" }}>
-          Get daily news on upcoming offers from many suppliers
-        </p>
-        <div style={{ marginTop: "20px" }}>
-          <input
-            type="email"
-            placeholder="Email"
-            style={{
-              padding: "10px",
-              border: "1px solid #dee2e7",
-              borderRadius: "6px 0 0 6px",
-              width: "250px",
-            }}
-          />
-          <button
-            style={{
-              padding: "10px 20px",
-              background: "#0D6EFD",
-              color: "#fff",
-              border: "none",
-              borderRadius: "0 6px 6px 0",
-              cursor: "pointer",
-            }}
-          >
-            Subscribe
-          </button>
-        </div>
-      </footer>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
